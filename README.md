@@ -1,6 +1,6 @@
 # Historias Clinicas 📖
 
-##Prueba del proyecto
+## Prueba del proyecto
 -Descargar o clonar proyecto.
 -Ejecutarlo en ISS Express.
 -Presionar el botón de precarga.
