@@ -1,20 +1,18 @@
 # Historias Clinicas 📖
 
 ## Prueba del proyecto
--Descargar o clonar proyecto.
--Ejecutarlo en ISS Express.
--Presionar el botón de precarga.
--La contraseña a utilizar para todas las cuentas precargadas es "Password1".
--Emails de las cuentas precargadas:
- --mateo@ort.edu.ar (Médico).
- --camila@ort.edu.ar (Médico).
- --francisco@ort.edu.ar (Empleado).
--- paola@ort.edu.ar (Empleado).
- --valentino@ort.edu.ar (Paciente).
- --juan@ort.edu.ar (Paciente).
+- Descargar o clonar proyecto.
+- Ejecutarlo en ISS Express.
+- Presionar el botón de precarga.
+- La contraseña a utilizar para todas las cuentas precargadas es "Password1".
+- Emails de las cuentas precargadas:
+     - mateo@ort.edu.ar (Médico).
+     - camila@ort.edu.ar (Médico).
+     - francisco@ort.edu.ar (Empleado).
+     - paola@ort.edu.ar (Empleado).
+     - valentino@ort.edu.ar (Paciente).
+     - juan@ort.edu.ar (Paciente).
  
-
-
 ## Caracteristicas y Funcionalidades ⌨️
 
 **Usuario**
