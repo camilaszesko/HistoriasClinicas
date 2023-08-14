@@ -73,7 +73,7 @@ Nota: Si el cierre del episodio, es por la condición sin evoluciones, se genera
 
 **Evolucion**
 - Una evolución, solo la puede crear y gestionar un Medico.
--- La unica excepción, es que un empleado, puede cargar notas en Evoluciones por cuestiones administrativas. Ej. Salvo, que el alta del paciente en la evolución, es 10/08/2020
+-- La unica excepción, es que un empleado, puede cargar notas en Evoluciones por cuestiones administrativas.
 - Automaticamente al crear una evolución se cargará:
 -- Medico que la esta creando
 -- FechaYHoraInicio
@@ -111,5 +111,5 @@ Nota: Si el cierre del episodio, es por la condición sin evoluciones, se genera
 
 **Aplicación General**
 - Información institucional.
-- Se deben listar el cuerpo medico, junto con sus especialidades.
-- Los accesos a las funcionalidades y/o capacidades, debe estar basada en los roles que tenga cada individuo.
+- Se lista el cuerpo médico, junto a sus especialidades, en la cartilla médica..
+- Los accesos a las funcionalidades y/o capacidades está basada en los roles que tenga cada individuo.
