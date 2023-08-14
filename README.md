@@ -1,82 +1,8 @@
 # 2022-2C-E-Historias-Clinicas
 # Historias Clinicas 📖
 
-## Objetivos 📋
-Desarrollar un sistema de historias clinicas para un consultorio, que permita la administración y uso de esta. 
-De cara a los empleados): Pacientes, Medicos, Empleados, HistoriaClinica, Episodio, Evoluciones, Epicrisis con Diagnostico, etc., como así también, permitir a los pacientes, realizar consultas acerca de su Historia clinica.
-Utilizar Visual Studio 2019 preferentemente y crear una aplicación utilizando ASP.NET MVC Core (versión a definir por el docente 3.1 o 6.0).
 
-<hr />
-
-## Enunciado 📢
-La idea principal de este trabajo práctico, es que Uds. se comporten como un equipo de desarrollo.
-Este documento, les acerca, un equivalente al resultado de una primera entrevista entre el paciente y alguien del equipo, el cual relevó e identificó la información aquí contenida. 
-A partir de este momento, deberán comprender lo que se está requiriendo y construir dicha aplicación, 
-
-Deben recopilar todas las dudas que tengan y evacuarlas con su nexo (el docente) de cara al paciente. De esta manera, él nos ayudará a conseguir la información ya un poco más procesada. 
-Es importante destacar, que este proceso, no debe esperar a ser en clase; es importante, que junten algunas consultas, sea de índole funcional o técnicas, en lugar de cada consulta enviarla de forma independiente.
-
-Las consultas que sean realizadas por correo deben seguir el siguiente formato:
-
-Subject: [NT1-<CURSO LETRA>-GRP-<GRUPO NUMERO>] <Proyecto XXX> | Informativo o Consulta
-
-Body: 
-
-1.<xxxxxxxx>
-
-2.< xxxxxxxx>
-
-
-# Ejemplo
-**Subject:** [NT1-A-GRP-5] Agenda de Turnos | Consulta
-
-**Body:**
-
-1.La relación del paciente con Turno es 1:1 o 1:N?
-
-2.Está bien que encaremos la validación del turno activo, con una propiedad booleana en el Turno?
-
-<hr />
-
-### Proceso de ejecución en alto nivel ☑️
- - Crear un nuevo proyecto en [visual studio](https://visualstudio.microsoft.com/en/vs/).
- - Adicionar todos los modelos dentro de la carpeta Models cada uno en un archivo separado.
- - Especificar todas las restricciones y validaciones solicitadas a cada una de las entidades. [DataAnnotations](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations?view=netcore-3.1).
- - Crear las relaciones entre las entidades
- - Crear una carpeta Data que dentro tendrá al menos la clase que representará el contexto de la base de datos DbContext. 
- - Crear el DbContext utilizando base de datos en memoria (con fines de testing inicial). [DbContext](https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext?view=efcore-3.1), [Database In-Memory](https://docs.microsoft.com/en-us/ef/core/providers/in-memory/?tabs=vs).
- - Agregar los DbSet para cada una de las entidades en el DbContext.
- - Crear el Scaffolding para permitir los CRUD de las entidades al menos solicitadas en el enunciado.
- - Aplicar las adecuaciones y validaciones necesarias en los controladores.  
- - Realizar un sistema de login con al menos los roles equivalentes a <Usuario Cliente> y <Usuario Administrador> (o con permisos elevados).
- - Si el proyecto lo requiere, generar el proceso de registración. 
- - Un administrador podrá realizar todas tareas que impliquen interacción del lado del negocio (ABM "Alta-Baja-Modificación" de las entidades del sistema y configuraciones en caso de ser necesarias).
- - El <Usuario Cliente> sólo podrá tomar acción en el sistema, en base al rol que tiene.
- - Realizar todos los ajustes necesarios en los modelos y/o funcionalidades.
- - Realizar los ajustes requeridos del lado de los permisos.
- - Todo lo referido a la presentación de la aplicaión (cuestiones visuales).
- 
-<hr />
-
-## Entidades 📄
-
-- Usuario
-- Paciente
-- Medico
-- Empleado
-- HistoriaClinica
-- Episodio
-- Evolucion
-- Notas
-- Epicrisis
-- Diagnostico
-
-`Importante: Todas las entidades deben tener su identificador unico. Id o <ClassNameId>`
-
-`
-Las propiedades descriptas a continuación, son las minimas que deben tener las entidades. Uds. pueden agregar las que consideren necesarias.
-De la misma manera Uds. deben definir los tipos de datos asociados a cada una de ellas, como así también las restricciones.
-`
+## Entidades y sus atributos:
 
 **Usuario**
 ```
@@ -178,21 +104,15 @@ De la misma manera Uds. deben definir los tipos de datos asociados a cada una de
 ```
 
 
-**NOTA:** aquí un link para refrescar el uso de los [Data annotations](https://www.c-sharpcorner.com/UploadFile/af66b7/data-annotations-for-mvc/).
-
-<hr />
 
 ## Caracteristicas y Funcionalidades ⌨️
-`Todas las entidades, deben tener implementado su correspondiente ABM, a menos que sea implicito el no tener que soportar alguna de estas acciones.`
-
-`IMPORTANTE: Ninguna entidad en el circuito de atención medica, puede ser modificado o eliminado una vez que se ha creado. Ej. No se puede Eliminar una Historia Clinica, No se puede modificar una nota de una evolución, etc.`
 
 **Usuario**
 - Los Pacientes pueden auto registrarse.
 - La autoregistración desde el sitio, es exclusiva para los pacientes. Por lo cual, se le asignará dicho rol.
 - Los empleados, deben ser agregados por otro Empleado. Lo mismo, para los Medicos.
-	- Al momento, del alta del empleado o medico, se le definirá un username y password.
-    - También se le asignará a estas cuentas el rol de empleado y/o medico según corresponda.
+- Al momento, del alta del empleado o medico, se le definirá un username y password.
+- También se le asignará a estas cuentas el rol de empleado y/o medico según corresponda.
 
 **Paciente**
 - Un paciente puede consultar su historia clinica, con todos los detalles que la componen, en modo solo visualización.
