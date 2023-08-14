@@ -26,6 +26,7 @@
 - Un paciente puede consultar su historia clinica, con todos los detalles que la componen, en modo solo visualización.
 - Puede acceder a los episodios, y por cada episodio, ver las evoluciones que se tienen, con sus detalles.
 - Puede actualizar datos de contacto, como el telefono, dirección,etc.. Pero no puede modificar su DNI, Nombre, Apellido, etc.
+- Para que un médico aparezca en la sección de "Mis Médicos", debe dirigirse a "Cartilla Médica" y solicitar un turno con el profesional deseado.
 
 **Empleado**
 - Un empleado, puede modificar todos los datos de los pacientes. 
