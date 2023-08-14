@@ -1,0 +1,156 @@
+﻿@model IEnumerable<Historias_Clinicas.Models.Medico>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Medicos</h1>
+<h3>Listado de Profesionales Médicos de la Clinica ORT-Salud </h3>
+<br />
+
+<section class="search-section">
+    <div class="container">
+        <form method="get" asp-action="Buscar" asp-controller="Medicos" novalidate="novalidate">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                            <input type="text" class="form-control search-input" name="apellido" placeholder="Buscar por Apellido" />
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-12 p-0" style="margin-left: 10px">
+                            <button class="btn btn-info search-button" type="submit">
+                                Buscar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <br />
+        <form method="get" asp-action="ListarEspecialidad" asp-controller="Medicos" novalidate="novalidate">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-3 col-sm-12 p-0">
+                            <select class="form-control search-input" name="especialidad" asp-items="@Html.GetEnumSelectList<Especialidad>()">
+                                Especialidad
+                            </select>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-12 p-0" style="margin-left: 10px">
+                            <button class="btn btn-info search-button" type="submit" value="Post data to controller">
+                                Buscar
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<br />
+<br />
+
+@if (User.IsInRole("Empleado"))
+{
+    <p align="right">
+        <a type="button" class="botonAgregar" asp-action="Create">Agregar Medico</a>
+    </p>}
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            @if (User.IsInRole("Empleado"))
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.MatriculaNacional)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+            }
+            <th>
+                @Html.DisplayNameFor(model => model.Especialidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SegundoNombre)
+            </th>
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @if (User.IsInRole("Empleado"))
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MatriculaNacional)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                }
+                <td>
+                    @Html.DisplayFor(modelItem => item.Especialidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SegundoNombre)
+                </td>
+
+                <td>
+                    @if (User.IsInRole("Empleado"))
+                    {
+                        <div>
+                            <a class="botonTablas" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                            <a class="botonTablas" asp-action="Details" asp-route-id="@item.Id">Detalle</a>
+                            <a class="botonTablas" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                        </div>
+
+                    }
+
+
+                    @if (User.IsInRole("Paciente"))
+                    {
+                        <div>
+                            <a class="botonTablas" asp-action="SacarTurno" asp-controller="Pacientes" asp-route-id="@item.Id">Solicitar turno</a>
+
+                        </div>
+
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+@if (User.IsInRole("Empleado"))
+{
+    <div>
+        <a type="boton" class="btn btn-secondary align-content-end" asp-action="MenuEmpleado" asp-controller="Empleados">Volver</a>
+    </div>
+}
+@if (User.IsInRole("Paciente"))
+{
+    <section>
+        <a type="boton" class="btn btn-secondary align-content-end" asp-action="MenuPaciente" asp-controller="Pacientes">Volver</a>
+    </section>
+}
+

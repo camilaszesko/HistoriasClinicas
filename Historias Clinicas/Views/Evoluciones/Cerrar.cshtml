@@ -1,0 +1,26 @@
+﻿@model Historias_Clinicas.Models.Evolucion
+
+
+
+<div class="container">
+    <div class="row">
+        <div class=" col-lg-2"></div>
+        <div class=" col-lg-8 col-md-12">
+            <h1> Esta seguro que desea cerrar esta Evolución?</h1>
+            <br />
+            <h2> La eliminación es irreversible</h2>
+            <br />
+            <br />
+
+            <a class="boton" asp-action="CerrarEvolucion" asp-route-id="@TempData["EvolucionId"]" asp-route-historiaClinicaId="@TempData["historiaClinicaId"]">Cerrar Evolucion</a>
+            <a type="button" class="btn btn-secondary" style="margin-left: 20px" asp-action="EvolucionesPorEpisodio" asp-controller="Evoluciones" asp-route-id="@TempData["EpisodioId"]" asp-route-historiaClinicaId="@TempData["historiaClinicaId"]">Cancelar</a>
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

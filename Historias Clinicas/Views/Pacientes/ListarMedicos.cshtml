@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Historias_Clinicas.Models.Medico>
+@{
+
+    ViewData["Title"] = "ListarMedicos";
+}
+
+
+<header>
+    <h1>Mis Medicos</h1>
+    <h3> Listado de Medicos</h3>
+    <br />
+
+</header>
+
+<section class="search-section">
+    <div class="container">
+        <form method="get" asp-action="Buscar" asp-controller="Medicos" novalidate="novalidate">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                            <input type="text" class="form-control search-input" name="apellido" placeholder="Buscar por Apellido" />
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-12 p-0" style="margin-left: 10px">
+                            <button class="btn btn-info search-button" type="submit">
+                                Buscar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <br/>
+        <form method="get" asp-action="ListarEspecialidad" asp-controller="Medicos" novalidate="novalidate">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-3 col-sm-12 p-0">
+                            <select class="form-control search-input" name="especialidad" asp-items="@Html.GetEnumSelectList<Especialidad>()">
+                                Especialidad
+                            </select>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-12 p-0" style="margin-left: 10px">
+                            <button class="btn btn-info search-button" type="submit" value="Post data to controller">
+                                Buscar
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<br />
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Especialidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SegundoNombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Especialidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SegundoNombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <a class="botonTablas" asp-action="SacarTurno" asp-controller="Pacientes" asp-route-id="@item.Id">Solicitar turno</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br/>
+
+<a type="button" class="btn btn-secondary" style="margin-left: 20px"  asp-action="MenuPaciente" asp-controller="Pacientes">
+    Salir
+</a>
