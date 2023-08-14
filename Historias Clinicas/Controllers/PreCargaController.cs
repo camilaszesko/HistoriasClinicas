@@ -44,8 +44,8 @@ namespace Historias_Clinicas.Controllers
                 Medico Medico1 = new Medico()
                 {
                     Nombre = "Mateo",
-                    SegundoNombre = "Agustin",
-                    Apellido = "Bellomo",
+                    SegundoNombre = "Rodrigo",
+                    Apellido = "Ramirez",
                     Dni = 42375111,
                     Email = "mateo@ort.edu.ar",
                     UserName = "mateo@ort.edu.ar",
@@ -144,7 +144,7 @@ namespace Historias_Clinicas.Controllers
                 {
                     Nombre = "Francisco",
                     SegundoNombre = "Javier",
-                    Apellido = "Veron",
+                    Apellido = "Lopez",
                     Dni = 42375222,
                     Email = "francisco@ort.edu.ar",
                     UserName = "francisco@ort.edu.ar",
@@ -172,8 +172,8 @@ namespace Historias_Clinicas.Controllers
                 Empleado Empleado2 = new Empleado()
                 {
                     Nombre = "Paola",
-                    SegundoNombre = "Yanina",
-                    Apellido = "Quinionez",
+                    SegundoNombre = "Maria",
+                    Apellido = "Dominguez",
                     Dni = 42300222,
                     Email = "paola@ort.edu.ar",
                     UserName = "paola@ort.edu.ar",
@@ -208,8 +208,8 @@ namespace Historias_Clinicas.Controllers
                 Paciente Paciente1 = new Paciente()
                 {
                     Nombre = "Valentino",
-                    SegundoNombre = "Pepe",
-                    Apellido = "Caseres",
+                    SegundoNombre = "Pedro",
+                    Apellido = "Carlone",
                     Dni = 41115222,
                     Email = "valentino@ort.edu.ar",
                     UserName = "valentino@ort.edu.ar",
